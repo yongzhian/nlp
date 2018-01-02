@@ -2,10 +2,6 @@ package cn.zain.service.impl;
 
 import cn.zain.model.entity.RobotSceneWord;
 import cn.zain.service.WordSegementService;
-import org.ansj.domain.Result;
-import org.ansj.domain.Term;
-import org.ansj.library.DicLibrary;
-import org.ansj.splitWord.analysis.ToAnalysis;
 import org.wltea.analyzer.cfg.Configuration;
 import org.wltea.analyzer.cfg.DefaultConfig;
 import org.wltea.analyzer.core.IKSegmenter;
@@ -15,7 +11,9 @@ import org.wltea.analyzer.dic.Dictionary;
 import java.io.IOException;
 import java.io.StringReader;
 import java.net.URISyntaxException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Ansj分词
@@ -41,6 +39,11 @@ public class IkWordSegmentServiceImpl implements WordSegementService {
         }
         result.add("--------------ik分词");
         return result;
+    }
+
+    @Override
+    public List segmentSentence(String sentence, String robotSn) {
+        return null;
     }
 
     @Override

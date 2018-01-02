@@ -41,6 +41,11 @@ public class StanfordWordSegmentServiceImpl implements WordSegementService {
     }
 
     @Override
+    public List segmentSentence(String sentence, String robotSn) {
+        return null;
+    }
+
+    @Override
     public boolean addWords2Robot(List<String> words, RobotSceneWord robotSceneWord) {
         return false;
     }

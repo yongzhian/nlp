@@ -9,7 +9,6 @@ import org.fnlp.util.exception.LoadModelException;
 
 import java.io.*;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -56,6 +55,11 @@ public class FnlpWordSegmentServiceImpl implements WordSegementService {
 
         //空格隔开的分词串
         return Arrays.asList(CWS_TAGGER.tag(sentence).split(" "));
+    }
+
+    @Override
+    public List  segmentSentence(String sentence, String robotSn) {
+        return null;
     }
 
     @Override

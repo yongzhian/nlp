@@ -5,7 +5,6 @@ import cn.zain.service.WordSegementService;
 import com.huaban.analysis.jieba.JiebaSegmenter;
 import com.huaban.analysis.jieba.WordDictionary;
 
-import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
@@ -43,6 +42,11 @@ public class JieBaWordSegmentServiceImpl implements WordSegementService {
         WordDictionary.getInstance().loadUserDict(dictPath1);
         List<String> jiebaResult = segmenter.sentenceProcess(sentence);
         return jiebaResult;
+    }
+
+    @Override
+    public List segmentSentence(String sentence, String robotSn) {
+        return null;
     }
 
     @Override

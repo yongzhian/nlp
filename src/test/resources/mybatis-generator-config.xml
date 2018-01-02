@@ -7,7 +7,7 @@
 
     <!-- !!!! Driver Class Path !!!! -->
     <classPathEntry
-            location="D:\software_dev\JetBrains\IDEA2016.1.3_workspace_flw_svn\robot_nlp\target\robot_nlp\WEB-INF\lib\mysql-connector-java-5.1.37.jar"/>
+            location="D:\software_dev\JetBrains\IDEA2016.1.3_workspace_git\nlp\target\ssm\WEB-INF\lib\mysql-connector-java-5.1.37.jar"/>
     <context id="context" targetRuntime="MyBatis3">
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
@@ -44,8 +44,18 @@
         </javaClientGenerator>
 
         <!-- !!!! Table Configurations !!!! -->
-        <table tableName="robot_scene_word" domainObjectName="RobotSceneWord" enableInsert="false" mapperName="RobotSceneWordDao"
-               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableDeleteByPrimaryKey="false"
+        <!--<table tableName="robot_scene_word" domainObjectName="RobotSceneWord" enableInsert="false" mapperName="RobotSceneWordDao"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableDeleteByPrimaryKey="false"-->
+               <!--enableUpdateByExample="false" enableUpdateByPrimaryKey="false">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql"/>-->
+        <!--</table>-->
+        <!--<table tableName="robot_ner" domainObjectName="RobotNer" enableInsert="false" mapperName="RobotNerDao"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="true" enableDeleteByPrimaryKey="false"-->
+               <!--enableUpdateByExample="false" enableUpdateByPrimaryKey="false">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql"/>-->
+        <!--</table>-->
+        <table tableName="scope_ner" domainObjectName="ScopeNer" enableInsert="false" mapperName="ScopeNerDao"
+               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="true" enableDeleteByPrimaryKey="false"
                enableUpdateByExample="false" enableUpdateByPrimaryKey="false">
             <generatedKey column="id" sqlStatement="Mysql"/>
         </table>

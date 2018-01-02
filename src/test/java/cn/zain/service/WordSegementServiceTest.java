@@ -1,8 +1,14 @@
 package cn.zain.service;
 
 
+import cn.zain.dao.RobotNerDao;
+import cn.zain.model.entity.RobotNer;
+import cn.zain.model.entity.RobotNerExample;
 import cn.zain.model.entity.RobotSceneWord;
-import cn.zain.service.impl.*;
+import cn.zain.service.impl.FnlpWordSegmentServiceImpl;
+import cn.zain.service.impl.IkWordSegmentServiceImpl;
+import cn.zain.service.impl.JieBaWordSegmentServiceImpl;
+import cn.zain.service.impl.StanfordWordSegmentServiceImpl;
 import cn.zain.toolkit.hanlp.SegmentExtend;
 import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.Segment;
@@ -34,6 +40,9 @@ public class WordSegementServiceTest {
     @Resource
     private WordSegementService wordSegementService;
 
+    @Resource
+    private RobotNerDao robotNerDao;
+
     static {
         Predefine.logger.setLevel(Level.ALL);
     }
@@ -43,7 +52,23 @@ public class WordSegementServiceTest {
     private static String testStr2 = "江州市长江大桥参加了长江大桥的通车仪式";
     private static String testStr3 = "永和服装饰品有限公司想打开电视,我要看超级大的台风";
     private static String testStr4 = "工信处女干事每月经过下属科室都要亲口交代24口交换机等技术性器件的安装工作";
-    private static String testStr5 = "维拉机器人可以帮我打开卧室的美的空调和电视机";
+    private static String testStr5 = "维拉机器人可以帮我打开一下卧室的大灯么";
+    private static String testStr6 = "帮我打开一下客厅所有灯的小彩灯";
+
+    @Test
+    public void daoTest() throws Exception {
+        RobotNerExample robotNerExample = new RobotNerExample();
+        robotNerExample.createCriteria().andRobotSnEqualTo("A025170100012");
+        final List<RobotNer> robotNers = robotNerDao.selectByExample(robotNerExample);
+        logger.info(robotNers);
+    }
+
+    @Test
+    public void segmentSentenceByAnsj() throws Exception {
+//        List list = wordSegementService.segmentSentence(testStr5, "23");
+        List list1 = wordSegementService.segmentSentence(testStr6, "A025170100012");
+        logger.info("........");
+    }
 
     @Test
     public void ansjBaWordSegmentServiceImplTest() throws Exception {
@@ -108,8 +133,6 @@ public class WordSegementServiceTest {
         logger.info(result1);
         logger.info(result2);
     }
-
-
 
 
     @Test

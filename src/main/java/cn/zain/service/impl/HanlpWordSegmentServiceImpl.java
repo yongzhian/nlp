@@ -7,7 +7,6 @@ import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.dictionary.CustomDictionary;
 import com.hankcs.hanlp.seg.Segment;
 import com.hankcs.hanlp.seg.Viterbi.ViterbiSegment;
-import com.hankcs.hanlp.tokenizer.StandardTokenizer;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -41,6 +40,11 @@ public class HanlpWordSegmentServiceImpl implements WordSegementService {
 //            CustomDictionary.remove(user_words[i]);
 //        }
         return result;
+    }
+
+    @Override
+    public List  segmentSentence(String sentence, String robotSn) {
+        return null;
     }
 
     @Override
